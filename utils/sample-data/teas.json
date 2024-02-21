@@ -1,0 +1,50 @@
+{
+  "-Nr8ikFi59xumttFhpXi": {
+    "name": "Jasmine Oolong Tea",
+    "description": "mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim",
+    "type": "Oolong",
+    "idealTemp": 201,
+    "steepTime": 3,
+    "ingredients": "jasmine flowers, petals",
+    "flavorNotes": "complex and smooth",
+    "looseLeaf": true,
+    "image": "http://dummyimage.com/226x100.png/cc0000/ffffff",
+    "firebaseKey": "-Nr8ikFi59xumttFhpXi"
+  },
+  "-Nr8ikFjAjc0aG_OATyh": {
+    "name": "null",
+    "description": "duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel",
+    "type": "Black",
+    "idealTemp": 207,
+    "steepTime": 4,
+    "ingredients": "null",
+    "flavorNotes": "null",
+    "looseLeaf": true,
+    "image": "http://dummyimage.com/188x100.png/5fa2dd/ffffff",
+    "firebaseKey": "-Nr8ikFjAjc0aG_OATyh"
+  },
+  "-Nr8ikFl4YUkIgZZ1ADN": {
+    "name": "null",
+    "description": "mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi",
+    "type": "herbal",
+    "idealTemp": 193,
+    "steepTime": 4,
+    "ingredients": "null",
+    "flavorNotes": "null",
+    "looseLeaf": false,
+    "image": "http://dummyimage.com/142x100.png/ff4444/ffffff",
+    "firebaseKey": "-Nr8ikFl4YUkIgZZ1ADN"
+  },
+  "-Nr8ikFnM1bdliWhuFQv": {
+    "name": "Chamomile",
+    "description": "accumsan tortor quis turpis sed ante vivamus tortor duis mattis",
+    "type": "herbal",
+    "idealTemp": 197,
+    "steepTime": 2,
+    "ingredients": "null",
+    "flavorNotes": "calming",
+    "looseLeaf": false,
+    "image": "http://dummyimage.com/247x100.png/dddddd/000000",
+    "firebaseKey": "-Nr8ikFnM1bdliWhuFQv"
+  }
+}
