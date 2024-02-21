@@ -1,0 +1,24 @@
+
+{
+  "-Nr8kb7lbgJUgaxe4fEJ": {
+    "name": "Banana",
+    "firebaseKey": "-Nr8kb7lbgJUgaxe4fEJ",
+    "foodNotes": "null",
+    "teaId": "-Nr8ikFi59xumttFhpXi",
+    "image": "http://dummyimage.com/200x100.png/dddddd/000000"
+  },
+  "-Nr8kb7mf6ZmqZK19AbJ": {
+    "name": "Cheesecake",
+    "firebaseKey": "-Nr8kb7mf6ZmqZK19AbJ",
+    "foodNotes": "null",
+    "teaId": "-Nr8ikFi59xumttFhpXi",
+    "image": "http://dummyimage.com/174x100.png/dddddd/000000"
+  },
+  "-Nr8kb7nEvOc2aDc5wzk": {
+    "name": "Steak",
+    "firebaseKey": "-Nr8kb7nEvOc2aDc5wzk",
+    "foodNotes": "null",
+    "teaId": "-Nr8kb7nEvOc2aDc5wzk",
+    "image": "http://dummyimage.com/207x100.png/ff4444/ffffff"
+  }
+}

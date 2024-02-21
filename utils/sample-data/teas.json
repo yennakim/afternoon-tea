@@ -12,7 +12,7 @@
     "firebaseKey": "-Nr8ikFi59xumttFhpXi"
   },
   "-Nr8ikFjAjc0aG_OATyh": {
-    "name": "null",
+    "name": "Earl Grey",
     "description": "duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel",
     "type": "Black",
     "idealTemp": 207,
@@ -24,14 +24,14 @@
     "firebaseKey": "-Nr8ikFjAjc0aG_OATyh"
   },
   "-Nr8ikFl4YUkIgZZ1ADN": {
-    "name": "null",
+    "name": "Strawberry Kiwi",
     "description": "mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi",
     "type": "herbal",
     "idealTemp": 193,
     "steepTime": 4,
     "ingredients": "null",
     "flavorNotes": "null",
-    "looseLeaf": false,
+    "looseLeaf": true,
     "image": "http://dummyimage.com/142x100.png/ff4444/ffffff",
     "firebaseKey": "-Nr8ikFl4YUkIgZZ1ADN"
   },
