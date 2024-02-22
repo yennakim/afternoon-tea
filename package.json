@@ -1,8 +1,8 @@
 {
-  "name": "next-firebase-starter",
+  "name": "afternoon-tea",
   "private": true,
   "version": "1.0.0",
-  "author": "Trinity Christiana",
+  "author": "Daun Kim",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
