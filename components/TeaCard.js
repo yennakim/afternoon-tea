@@ -18,6 +18,9 @@ export default function TeaCard({ teaObj, onUpdate }) {
         <Card.Title>{teaObj.name}</Card.Title>
         <p className="card-text bold">{teaObj.type}</p>
         {/* DYNAMIC LINK TO EDIT THE TEA DETAILS  */}
+        <Link href={`/tea/${teaObj.firebaseKey}`} passHref>
+          <Button variant="primary" className="m-2">VIEW</Button>
+        </Link>
         <Link href={`/tea/edit/${teaObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
