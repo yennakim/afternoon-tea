@@ -12,7 +12,7 @@ export default function FoodCard({ foodObj, onUpdate }) {
   };
 
   return (
-    <Card className="custom-class" style={{ width: '18rem', margin: '10px' }}>
+    <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={foodObj.image} alt={foodObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{foodObj.name}</Card.Title>
