@@ -94,8 +94,8 @@ export default function TeaForm({ obj }) {
           {
             teas.map((tea) => (
               <option
-                key={tea.firebaseKey}
-                value={tea.firebaseKey}
+                key={tea.type}
+                value={tea.type}
               >
                 {tea.type}
               </option>
