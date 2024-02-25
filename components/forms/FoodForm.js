@@ -30,7 +30,7 @@ function FoodForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateFood(formInput).then(() => router.push(`/food/${obj.firebaseKey}`));
+      updateFood(formInput).then(() => router.push('/foods'));
     } else {
       const payload = { ...formInput };
       createFood(payload).then(({ name }) => {
