@@ -69,10 +69,25 @@ const deleteSingleTea = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
+
+// GET TEA FOODS
+const getFoodsPairedWithTea = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/foods.json?orderBy="teaId"&equalTo="${firebaseKey}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 export {
   getTeas,
   getSingleTea,
   createTea,
   updateTea,
   deleteSingleTea,
+  getFoodsPairedWithTea,
 };
