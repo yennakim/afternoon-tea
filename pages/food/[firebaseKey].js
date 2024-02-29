@@ -24,7 +24,7 @@ export default function ViewFood() {
         <h5>
           {foodDetails.name}
         </h5>
-        <p>Pairs well with tea</p>
+        <p>Pairs well with {foodDetails.teaObject?.name}</p>
         <hr />
         <p>
           {foodDetails.foodNotes}
