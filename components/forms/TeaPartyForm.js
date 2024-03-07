@@ -47,7 +47,7 @@ export default function TeaPartyForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Tea Party Event</h2>
+      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Edit' : 'Create'} Tea Party</h2>
 
       {/* TEA PARTY NAME INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Tea Party Name" className="mb-3">
@@ -110,7 +110,7 @@ export default function TeaPartyForm({ obj }) {
       </FloatingLabel>
 
       {/* SUBMIT BUTTON  */}
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Tea Party Event</Button>
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Event</Button>
     </Form>
   );
 }
