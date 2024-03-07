@@ -7,8 +7,8 @@
     "teaId": "-Nr8ikFi59xumttFhpXi",
     "foodId": "-Nr8kb7mf6ZmqZK19AbJ",
     "uid": "null",
-    "partyDate": "12/20/2023",
-    "partyTime": "1:44 PM"
+    "partyTime": "1:44 PM",
+    "partyDate": "12/20/2023"
   },
   "-Ns-AwlaQQB06djOjvt0": {
     "firebaseKey": "-Ns-AwlaQQB06djOjvt0",
@@ -18,7 +18,7 @@
     "teaId": "null",
     "foodId": "null",
     "uid": "null",
-    "partyDate": "6/5/2023",
-    "partyTime": "1:25 PM"
+    "partyTime": "1:44 PM",
+    "partyDate": "6/5/2023"
   }
 }

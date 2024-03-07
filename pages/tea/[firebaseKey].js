@@ -44,6 +44,3 @@ export default function ViewTea() {
     </div>
   );
 }
-
-// TEA IS AUTHORS
-// FOOD IS BOOKS
