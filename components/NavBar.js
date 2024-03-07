@@ -36,7 +36,7 @@ export default function NavBar() {
             <Link passHref href="/addTea">
               <Nav.Link>Add Tea</Nav.Link>
             </Link>
-            <Link passHref href="/teaParties">
+            <Link passHref href="/teaParty">
               <Nav.Link>Tea Parties</Nav.Link>
             </Link>
             <Button variant="danger" onClick={signOut}>Sign Out</Button>
