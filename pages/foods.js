@@ -17,7 +17,7 @@ export default function FoodsPage() {
   return (
     <div className="text-center my-4">
       <Link href="/food/addFood" passHref>
-        <Button>Add A Food</Button>
+        <Button variant="success">Add A Food</Button>
       </Link>
       <div className="d-flex flex-wrap">
         {foods.map((food) => (
