@@ -31,8 +31,8 @@ export default function ViewTea() {
           <li>Ingredients: {teaDetails.ingredients}</li>
           <li>Notes: {teaDetails.flavorNotes}</li>
           <li>Ideal temperature: {teaDetails.idealTemp} degrees</li>
-          <li>Steep time: {teaDetails.steepTime} minutes</li>
           <li>Loose leaf: {teaDetails.looseLeaf ? 'Yes' : 'No'}</li>
+          <li>Iced: {teaDetails.iced ? 'Yes' : 'No'}</li>
         </ul>
         <hr />
         <div className="d-flex flex-wrap">

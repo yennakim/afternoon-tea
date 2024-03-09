@@ -11,10 +11,10 @@ const initialState = {
   description: '',
   type: '',
   idealTemp: '',
-  steepTime: '',
   ingredients: '',
   flavorNotes: '',
   looseLeaf: '',
+  iced: '',
   image: '',
 };
 
@@ -116,18 +116,6 @@ export default function TeaForm({ obj }) {
         />
       </FloatingLabel>
 
-      {/* STEEP TIME INPUT  */}
-      <FloatingLabel controlId="floatingInput3" label="Steep Time" className="mb-3">
-        <Form.Control
-          type="text"
-          placeholder="Enter steep time"
-          name="steepTime"
-          value={formInput.steepTime}
-          onChange={handleChange}
-          required
-        />
-      </FloatingLabel>
-
       {/* INGREDIENTS  INPUT  */}
       <FloatingLabel controlId="floatingInput4" label="Ingredients" className="mb-3">
         <Form.Control
@@ -179,6 +167,20 @@ export default function TeaForm({ obj }) {
           }));
         }}
       />
+      <Form.Check
+        className="text-white mb-3"
+        type="switch"
+        id="iced"
+        name="iced"
+        label="Iced?"
+        checked={formInput.looseLeaf}
+        onChange={(e) => {
+          setFormInput((prevState) => ({
+            ...prevState,
+            iced: e.target.checked,
+          }));
+        }}
+      />
 
       {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Add'} Tea</Button>
@@ -192,7 +194,6 @@ TeaForm.propTypes = {
     description: PropTypes.string,
     type: PropTypes.string,
     idealTemp: PropTypes.number,
-    steepTime: PropTypes.number,
     ingredients: PropTypes.string,
     flavorNotes: PropTypes.string,
     looseLeaf: PropTypes.bool,
