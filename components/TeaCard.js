@@ -14,7 +14,7 @@ export default function TeaCard({ teaObj, onUpdate }) {
   return (
     <Card className="custom-class" style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={teaObj.image} alt={teaObj.name} style={{ height: '400px' }} />
-      <Card.Body>
+      <Card.Body className="text-center">
         <Card.Title>{teaObj.name}</Card.Title>
         <p className="card-text bold">{teaObj.type}</p>
         {/* DYNAMIC LINK TO EDIT THE TEA DETAILS  */}

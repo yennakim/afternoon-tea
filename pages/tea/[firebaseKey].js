@@ -19,28 +19,25 @@ export default function ViewTea() {
 
   return (
     <div className="mt-5 d-flex flex-wrap">
-      <div className="d-flex flex-column">
-        <img src={teaDetails.image} alt={teaDetails.name} style={{ width: '300px' }} />
+      <div className="d-flex flex-row mb-5">
+        <img src={teaDetails.image} alt={teaDetails.name} style={{ width: '200px' }} />
       </div>
-      <div className="text-white ms-5 details">
-        <h5>
-          {teaDetails.name}
-        </h5>
+      <div className="text-white ms-5 mb-4 details">
+        <h3>{teaDetails.name}</h3>
+        <h6 className="card-subtitle">Type: {teaDetails.type}</h6>
         <p>{teaDetails.description}</p>
-        <ul>
-          <li>Ingredients: {teaDetails.ingredients}</li>
-          <li>Notes: {teaDetails.flavorNotes}</li>
-          <li>Ideal temperature: {teaDetails.idealTemp} degrees</li>
-          <li>Loose leaf: {teaDetails.looseLeaf ? 'Yes' : 'No'}</li>
-          <li>Iced: {teaDetails.iced ? 'Yes' : 'No'}</li>
-        </ul>
-        <hr />
-        <div className="d-flex flex-wrap">
-          {teaDetails.foods?.map((food) => (
-            <FoodCard key={food.firebaseKey} foodObj={food} onUpdate={getFoodsPairedWithTea} />
-          ))}
-        </div>
+        <p>Ingredients: {teaDetails.ingredients}</p>
+        <p>Notes: {teaDetails.flavorNotes}</p>
+        <p>Ideal temperature: {teaDetails.idealTemp} degrees</p>
+        <p>Loose leaf: {teaDetails.looseLeaf ? 'Yes' : 'No'}</p>
+        <p>Recommended: {teaDetails.iced ? 'Iced 🧊' : 'Hot ☕︎'}</p>
+      </div>
+      <div className="d-flex flex-wrap">
+        {teaDetails.foods?.map((food) => (
+          <FoodCard key={food.firebaseKey} foodObj={food} onUpdate={getFoodsPairedWithTea} />
+        ))}
       </div>
     </div>
+
   );
 }
