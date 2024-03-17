@@ -28,7 +28,7 @@ export default function ViewTea() {
         <p>{teaDetails.description}</p>
         <p>Ingredients: {teaDetails.ingredients}</p>
         <p>Notes: {teaDetails.flavorNotes}</p>
-        <p>Ideal temperature: {teaDetails.idealTemp} degrees</p>
+        <p>Ideal temperature: {teaDetails.idealTemp}°F</p>
         <p>Loose leaf: {teaDetails.looseLeaf ? 'Yes' : 'No'}</p>
         <p>Recommended: {teaDetails.iced ? 'Iced 🧊' : 'Hot ☕︎'}</p>
       </div>
