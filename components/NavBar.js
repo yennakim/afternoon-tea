@@ -39,6 +39,9 @@ export default function NavBar() {
             <Link passHref href="/teaParty">
               <Nav.Link>Tea Parties</Nav.Link>
             </Link>
+            <Link passHref href="/myPosts">
+              <Nav.Link>My Posts</Nav.Link>
+            </Link>
             <Button variant="danger" onClick={signOut}>Sign Out</Button>
           </Nav>
         </Navbar.Collapse>

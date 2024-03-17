@@ -5,20 +5,20 @@
     "firebaseKey": "-Nr8kb7lbgJUgaxe4fEJ",
     "foodNotes": "null",
     "teaId": "-Nr8ikFi59xumttFhpXi",
-    "image": "http://dummyimage.com/200x100.png/dddddd/000000"
+    "image": "https://media.istockphoto.com/id/1400057530/photo/bananas-isolated.webp?b=1&s=170667a&w=0&k=20&c=uiSdjIQkTr7S4gEdW_oB_5zfFYhpfe0LP-CryQl49w4="
   },
   "-Nr8kb7mf6ZmqZK19AbJ": {
     "name": "Cheesecake",
     "firebaseKey": "-Nr8kb7mf6ZmqZK19AbJ",
     "foodNotes": "null",
     "teaId": "-Nr8ikFi59xumttFhpXi",
-    "image": "http://dummyimage.com/174x100.png/dddddd/000000"
+    "image": "https://handletheheat.com/wp-content/uploads/2014/03/Cheesecake-02-Square.jpg"
   },
   "-Nr8kb7nEvOc2aDc5wzk": {
-    "name": "Steak",
     "firebaseKey": "-Nr8kb7nEvOc2aDc5wzk",
+    "name": "Steak",
     "foodNotes": "null",
     "teaId": "-Nr8kb7nEvOc2aDc5wzk",
-    "image": "http://dummyimage.com/207x100.png/ff4444/ffffff"
+    "image": "https://meateatingmilitaryman.com/wp-content/uploads/2023/09/traeger-tomahawk-steak.jpg"
   }
 }
