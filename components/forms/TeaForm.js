@@ -173,7 +173,7 @@ export default function TeaForm({ obj }) {
         id="iced"
         name="iced"
         label="Iced?"
-        checked={formInput.looseLeaf}
+        checked={formInput.iced}
         onChange={(e) => {
           setFormInput((prevState) => ({
             ...prevState,
