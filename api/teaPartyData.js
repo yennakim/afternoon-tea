@@ -3,21 +3,15 @@ import { clientCredentials } from '../utils/client';
 const endpoint = clientCredentials.databaseURL;
 
 // GET TEA PARTIES
-const getTeaParties = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/teaParties.json?orderBy="uid"&equalTo="${uid}"`, {
+const getTeaParties = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teaParties.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        resolve(Object.values(data));
-      } else {
-        resolve([]);
-      }
-    })
+    .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
 
@@ -75,10 +69,30 @@ const deleteSingleTeaParty = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET USER TEA PARTIES
+const getUserTeaParties = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teaParties.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
   getTeaParties,
   getSingleTeaParty,
   createTeaParty,
   updateTeaParty,
   deleteSingleTeaParty,
+  getUserTeaParties,
 };

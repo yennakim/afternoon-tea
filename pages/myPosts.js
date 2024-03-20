@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import TeaPartyCard from '../components/TeaPartyCard';
-import { getTeaParties } from '../api/teaPartyData';
+import { getUserTeaParties } from '../api/teaPartyData';
 import { useAuth } from '../utils/context/authContext';
 
 export default function MyPostsPage() {
@@ -10,7 +10,7 @@ export default function MyPostsPage() {
   const { user } = useAuth();
 
   const getAllTeaParties = () => {
-    getTeaParties(user.uid).then(setTeaParties);
+    getUserTeaParties(user.uid).then(setTeaParties);
   };
 
   useEffect(() => {
