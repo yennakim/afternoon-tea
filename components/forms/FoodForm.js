@@ -94,7 +94,7 @@ FoodForm.propTypes = {
   obj: PropTypes.shape({
     name: PropTypes.string,
     flavorNotes: PropTypes.string,
-    image: PropTypes.bool,
+    image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };

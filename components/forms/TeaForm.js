@@ -187,10 +187,10 @@ TeaForm.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     type: PropTypes.string,
-    idealTemp: PropTypes.number,
+    idealTemp: PropTypes.string,
     ingredients: PropTypes.string,
     flavorNotes: PropTypes.string,
-    looseLeaf: PropTypes.bool,
+    looseLeaf: PropTypes.string,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
 

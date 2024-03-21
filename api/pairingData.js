@@ -82,7 +82,7 @@ const updatePairing = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// DELETE PAIRINGY
+// DELETE PAIRINGS
 const deleteSinglePairing = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/pairings/${firebaseKey}.json`, {
     method: 'DELETE',
