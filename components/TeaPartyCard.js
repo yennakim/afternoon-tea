@@ -24,12 +24,16 @@ export default function TeaPartyCard({ teaPartyObj, onUpdate }) {
         <Link href={`/teaParty/${teaPartyObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/teaParty/edit/${teaPartyObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
-        </Link>
-        <Button variant="danger" onClick={deleteTeaParty} className="m-2">
-          DELETE
-        </Button>
+        {user.uid === teaPartyObj.uid && (
+        <>
+          <Link href={`/teaParty/edit/${teaPartyObj.firebaseKey}`} passHref>
+            <Button variant="info">EDIT</Button>
+          </Link>
+          <Button variant="danger" onClick={deleteTeaParty} className="m-2">
+            DELETE
+          </Button>
+        </>
+        )}
       </Card.Body>
     </Card>
   );
