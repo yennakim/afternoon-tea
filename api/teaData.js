@@ -83,6 +83,25 @@ const getFoodsPairedWithTea = (firebaseKey) => new Promise((resolve, reject) => 
     .catch(reject);
 });
 
+// GET USER TEAS
+const getUserTeas = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teas.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
   getTeas,
   getSingleTea,
@@ -90,4 +109,5 @@ export {
   updateTea,
   deleteSingleTea,
   getFoodsPairedWithTea,
+  getUserTeas,
 };

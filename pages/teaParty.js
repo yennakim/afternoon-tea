@@ -3,14 +3,12 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import TeaPartyCard from '../components/TeaPartyCard';
 import { getTeaParties } from '../api/teaPartyData';
-import { useAuth } from '../utils/context/authContext';
 
 export default function TeaPartiesPage() {
   const [teaParties, setTeaParties] = useState([]);
-  const { user } = useAuth();
 
   const getAllTeaParties = () => {
-    getTeaParties(user.uid).then(setTeaParties);
+    getTeaParties().then(setTeaParties);
   };
 
   useEffect(() => {

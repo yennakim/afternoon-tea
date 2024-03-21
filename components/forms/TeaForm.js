@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-import { getTeas, createTea, updateTea } from '../../api/teaData';
+import { useAuth } from '../../utils/context/authContext';
+import { createTea, updateTea } from '../../api/teaData';
 
 const initialState = {
   name: '',
@@ -20,13 +21,12 @@ const initialState = {
 
 export default function TeaForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
-  const [teas, setTeas] = useState([]);
   const router = useRouter();
+  const { user } = useAuth();
 
   useEffect(() => {
-    getTeas().then(setTeas);
     if (obj.firebaseKey) setFormInput(obj);
-  }, [obj]);
+  }, [obj], user);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,7 +41,7 @@ export default function TeaForm({ obj }) {
     if (obj.firebaseKey) {
       updateTea(formInput).then(() => router.push('/'));
     } else {
-      const payload = { ...formInput };
+      const payload = { ...formInput, uid: user.uid };
       createTea(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateTea(patchPayload).then(() => {
@@ -81,27 +81,21 @@ export default function TeaForm({ obj }) {
       </FloatingLabel>
 
       {/* TEA TYPE SELECT  */}
-      <FloatingLabel controlId="floatingSelect" label="Tea Type">
-        <Form.Select
-          aria-label="Tea Type"
+      <FloatingLabel controlId="floatingSelect" label="Tea Type" className="mb-3">
+        <Form.Control
+          as="select"
           name="type"
-          onChange={handleChange}
-          className="mb-3"
           value={formInput.type}
+          onChange={handleChange}
           required
         >
           <option value="">Select Tea Type</option>
-          {
-            teas.map((tea) => (
-              <option
-                key={tea.type}
-                value={tea.type}
-              >
-                {tea.type}
-              </option>
-            ))
-          }
-        </Form.Select>
+          <option value="Black">Black</option>
+          <option value="Green">Green</option>
+          <option value="Herbal">Herbal</option>
+          <option value="Oolong">Oolong</option>
+          <option value="White">White</option>
+        </Form.Control>
       </FloatingLabel>
 
       {/* IDEAL TEA TEMP INPUT  */}
@@ -173,7 +167,7 @@ export default function TeaForm({ obj }) {
         id="iced"
         name="iced"
         label="Iced?"
-        checked={formInput.looseLeaf}
+        checked={formInput.iced}
         onChange={(e) => {
           setFormInput((prevState) => ({
             ...prevState,
