@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { Button, Card } from 'react-bootstrap';
 import Link from 'next/link';
 import { deleteSingleTea } from '../api/teaData';
+import { useAuth } from '../utils/context/authContext';
 
 export default function TeaCard({ teaObj, onUpdate }) {
+  const { user } = useAuth();
   const deleteTea = () => {
     if (window.confirm(`Would you like to delete ${teaObj.name}?`)) {
       deleteSingleTea(teaObj.firebaseKey).then(() => onUpdate());
@@ -21,12 +23,16 @@ export default function TeaCard({ teaObj, onUpdate }) {
         <Link href={`/tea/${teaObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/tea/edit/${teaObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
-        </Link>
-        <Button variant="danger" onClick={deleteTea} className="m-2">
-          DELETE
-        </Button>
+        {user.uid === teaObj.uid && (
+        <>
+          <Link href={`/tea/edit/${teaObj.firebaseKey}`} passHref>
+            <Button variant="info">EDIT</Button>
+          </Link>
+          <Button variant="danger" onClick={deleteTea} className="m-2">
+            DELETE
+          </Button>
+        </>
+        )}
       </Card.Body>
     </Card>
   );
@@ -38,6 +44,7 @@ TeaCard.propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
     firebaseKey: PropTypes.string,
+    uid: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

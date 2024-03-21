@@ -5,6 +5,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { createFood, updateFood } from '../../api/foodData';
+import { useAuth } from '../../utils/context/authContext';
 
 const initialState = {
   name: '',
@@ -14,10 +15,11 @@ const initialState = {
 function FoodForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
   const router = useRouter();
+  const { user } = useAuth();
 
   useEffect(() => {
     if (obj.firebaseKey) setFormInput(obj);
-  }, [obj]);
+  }, [obj], user);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +34,7 @@ function FoodForm({ obj }) {
     if (obj.firebaseKey) {
       updateFood(formInput).then(() => router.push('/foods'));
     } else {
-      const payload = { ...formInput };
+      const payload = { ...formInput, uid: user.uid };
       createFood(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateFood(patchPayload).then(() => {
