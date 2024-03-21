@@ -19,7 +19,7 @@ export default function TeaPartyCard({ teaPartyObj, onUpdate }) {
       <Card.Img variant="top" src={teaPartyObj.image} alt={teaPartyObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{teaPartyObj.name}</Card.Title>
-        <Card.Text>Hosted by: {user.uid === teaPartyObj.uid ? `${user.displayName}` : 'Anonymous' }</Card.Text>
+        <Card.Text>Created by: {user.uid === teaPartyObj.uid ? `${user.displayName}` : 'Anonymous' }</Card.Text>
         {/* DYNAMIC LINK TO EDIT THE TEA DETAILS  */}
         <Link href={`/teaParty/${teaPartyObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
