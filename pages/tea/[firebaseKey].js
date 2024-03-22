@@ -31,6 +31,7 @@ export default function ViewTea() {
         <p>Ideal temperature: {teaDetails.idealTemp}°F</p>
         <p>Loose leaf: {teaDetails.looseLeaf ? 'Yes' : 'No'}</p>
         <p>Recommended: {teaDetails.iced ? 'Iced 🧊' : 'Hot ☕︎'}</p>
+        <hr />
       </div>
       <div className="d-flex flex-wrap">
         {teaDetails.foods?.map((food) => (
@@ -38,6 +39,5 @@ export default function ViewTea() {
         ))}
       </div>
     </div>
-
   );
 }
