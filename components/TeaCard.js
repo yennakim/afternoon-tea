@@ -14,7 +14,14 @@ export default function TeaCard({ teaObj, onUpdate }) {
   };
 
   return (
-    <Card className="custom-class" style={{ width: '18rem', margin: '10px' }}>
+    <Card
+      className="custom-class"
+      style={{
+        width: '18rem',
+        backgroundColor: '#fefbed',
+        margin: '10px',
+      }}
+    >
       <Card.Img variant="top" src={teaObj.image} alt={teaObj.name} style={{ height: '400px' }} />
       <Card.Body className="text-center">
         <Card.Title>{teaObj.name}</Card.Title>

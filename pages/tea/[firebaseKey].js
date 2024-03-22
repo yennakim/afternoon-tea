@@ -22,7 +22,7 @@ export default function ViewTea() {
       <div className="d-flex flex-row mb-5">
         <img src={teaDetails.image} alt={teaDetails.name} style={{ width: '200px' }} />
       </div>
-      <div className="text-white ms-5 mb-4 details">
+      <div className="text ms-5 mb-4 details">
         <h3>{teaDetails.name}</h3>
         <h6 className="card-subtitle">Type: {teaDetails.type}</h6>
         <p>{teaDetails.description}</p>

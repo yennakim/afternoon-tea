@@ -20,7 +20,7 @@ export default function ViewTeaParty() {
       <div className="d-flex flex-column">
         <img src={partyDetails.image} alt={partyDetails.name} style={{ width: '300px' }} />
       </div>
-      <div className="text-white ms-5 details">
+      <div className="text ms-5 details">
         <h1>
           {partyDetails.name}
         </h1>

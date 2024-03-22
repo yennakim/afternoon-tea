@@ -53,7 +53,7 @@ export default function TeaForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Tea</h2>
+      <h2 className="text mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Tea</h2>
 
       {/* TEA NAME INPUT  */}
       <FloatingLabel controlId="floatingInput1" label=" Name" className="mb-3">
@@ -148,7 +148,7 @@ export default function TeaForm({ obj }) {
 
       {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
       <Form.Check
-        className="text-white mb-3"
+        className="text mb-3"
         type="switch"
         id="looseLeaf"
         name="looseLeaf"
@@ -162,7 +162,7 @@ export default function TeaForm({ obj }) {
         }}
       />
       <Form.Check
-        className="text-white mb-3"
+        className="text mb-3"
         type="switch"
         id="iced"
         name="iced"

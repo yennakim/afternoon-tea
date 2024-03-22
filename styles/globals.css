@@ -17,7 +17,7 @@ a {
   box-sizing: border-box;
 }
 
-body {
-  background-color: #403e41;
+.color, .color > a {
+  background-color: #d0c3f1;
   color: #fefbed;
 }

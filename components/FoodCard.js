@@ -14,7 +14,13 @@ export default function FoodCard({ foodObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card
+      style={{
+        width: '18rem',
+        backgroundColor: '#fefbed',
+        margin: '10px',
+      }}
+    >
       <Card.Img variant="top" src={foodObj.image} alt={foodObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{foodObj.name}</Card.Title>
