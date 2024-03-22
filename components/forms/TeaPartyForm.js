@@ -49,7 +49,7 @@ export default function TeaPartyForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Edit' : 'Create'} Tea Party</h2>
+      <h2 className="text mt-5">{obj.firebaseKey ? 'Edit' : 'Create'} Tea Party</h2>
 
       {/* TEA PARTY NAME INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Tea Party Name" className="mb-3">

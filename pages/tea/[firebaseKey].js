@@ -22,7 +22,7 @@ export default function ViewTea() {
       <div className="d-flex flex-row mb-5">
         <img src={teaDetails.image} alt={teaDetails.name} style={{ width: '200px' }} />
       </div>
-      <div className="text-white ms-5 mb-4 details">
+      <div className="text ms-5 mb-4 details">
         <h3>{teaDetails.name}</h3>
         <h6 className="card-subtitle">Type: {teaDetails.type}</h6>
         <p>{teaDetails.description}</p>
@@ -31,6 +31,7 @@ export default function ViewTea() {
         <p>Ideal temperature: {teaDetails.idealTemp}°F</p>
         <p>Loose leaf: {teaDetails.looseLeaf ? 'Yes' : 'No'}</p>
         <p>Recommended: {teaDetails.iced ? 'Iced 🧊' : 'Hot ☕︎'}</p>
+        <hr />
       </div>
       <div className="d-flex flex-wrap">
         {teaDetails.foods?.map((food) => (
@@ -38,6 +39,5 @@ export default function ViewTea() {
         ))}
       </div>
     </div>
-
   );
 }

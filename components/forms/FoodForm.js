@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { createFood, updateFood } from '../../api/foodData';
 import { useAuth } from '../../utils/context/authContext';
+import { getTeas } from '../../api/teaData';
 
 const initialState = {
   name: '',
@@ -14,10 +15,12 @@ const initialState = {
 
 function FoodForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
+  const [teas, setTeas] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
+    getTeas().then(setTeas);
     if (obj.firebaseKey) setFormInput(obj);
   }, [obj], user);
 
@@ -84,6 +87,30 @@ function FoodForm({ obj }) {
         />
       </FloatingLabel>
 
+      {/* TEA SELECT  */}
+      <FloatingLabel controlId="floatingSelect" label="Tea">
+        <Form.Select
+          aria-label="Tea"
+          name="teaId"
+          onChange={handleChange}
+          className="mb-3"
+          value={formInput.teaId} //
+          required
+        >
+          <option value="">Select Tea</option>
+          {
+            teas.map((tea) => (
+              <option
+                key={tea.firebaseKey}
+                value={tea.firebaseKey}
+              >
+                {tea.name}
+              </option>
+            ))
+          }
+        </Form.Select>
+      </FloatingLabel>
+
       {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Add'} Food Item</Button>
     </Form>
@@ -94,7 +121,7 @@ FoodForm.propTypes = {
   obj: PropTypes.shape({
     name: PropTypes.string,
     flavorNotes: PropTypes.string,
-    image: PropTypes.bool,
+    image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };

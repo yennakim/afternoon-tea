@@ -15,11 +15,17 @@ export default function TeaPartyCard({ teaPartyObj, onUpdate }) {
   };
 
   return (
-    <Card className="custom-class" style={{ width: '18rem', margin: '10px' }}>
+    <Card
+      style={{
+        width: '18rem',
+        backgroundColor: '#fefbed',
+        margin: '10px',
+      }}
+    >
       <Card.Img variant="top" src={teaPartyObj.image} alt={teaPartyObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{teaPartyObj.name}</Card.Title>
-        <Card.Text>Created by: {user.uid === teaPartyObj.uid ? `${user.displayName}` : 'Anonymous' }</Card.Text>
+        <Card.Text>Hosted by: {user.uid === teaPartyObj.uid ? `${user.displayName}` : 'Anonymous' }</Card.Text>
         {/* DYNAMIC LINK TO EDIT THE TEA DETAILS  */}
         <Link href={`/teaParty/${teaPartyObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
