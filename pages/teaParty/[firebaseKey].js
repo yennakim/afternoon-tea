@@ -24,16 +24,13 @@ export default function ViewTeaParty() {
         <h1>
           {partyDetails.name}
         </h1>
+        <p>{partyDetails.description}</p>
         <hr />
 
         <h4>Date: {partyDetails.partyDate}</h4>
         <h4>
           Time: {partyDetails.partyTime}
         </h4>
-      </div>
-      <div>
-        <br />
-        <h5>{partyDetails.description}</h5>
       </div>
     </div>
   );
