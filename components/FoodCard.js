@@ -14,7 +14,6 @@ export default function FoodCard({ foodObj, onUpdate }) {
       deleteSingleFood(foodObj.firebaseKey).then(() => onUpdate(router.push('/')));
     }
   };
-
   return (
     <Card
       style={{
@@ -27,7 +26,8 @@ export default function FoodCard({ foodObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{foodObj.name}</Card.Title>
         <Card.Text>{foodObj.foodNotes}</Card.Text>
-        {user.uid === foodObj.uid && (
+        <Card.Text>Recommended by: {user && user.uid === foodObj.uid ? user.displayName : foodObj.username}</Card.Text>
+        {user && user.uid === foodObj.uid && (
         <Card.Footer>
           <Link href={`/food/edit/${foodObj.firebaseKey}`} passHref>
             <Button variant="info">EDIT</Button>
@@ -49,6 +49,8 @@ FoodCard.propTypes = {
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
     foodNotes: PropTypes.string,
+    username: PropTypes.string,
+    teaId: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

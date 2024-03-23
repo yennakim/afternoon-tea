@@ -35,7 +35,7 @@ function FoodForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateFood(formInput).then(() => router.push('/'));
+      updateFood(formInput).then(() => router.push(`/tea/${obj.teaId}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createFood(payload).then(({ name }) => {
@@ -123,6 +123,7 @@ FoodForm.propTypes = {
     foodNotes: PropTypes.string,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
+    teaId: PropTypes.string,
   }),
 };
 
