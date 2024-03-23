@@ -35,13 +35,13 @@ function FoodForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateFood(formInput).then(() => router.push('/foods'));
+      updateFood(formInput).then(() => router.push('/'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createFood(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateFood(patchPayload).then(() => {
-          router.push('/foods');
+          router.push('/');
         });
       });
     }
@@ -49,7 +49,7 @@ function FoodForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Add'} Food Item</h2>
+      <h2 className="text mt-5">{obj.firebaseKey ? 'Update' : 'Add'} Food Item</h2>
 
       {/* FOOD NAME INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Food Name" className="mb-3">
@@ -63,11 +63,11 @@ function FoodForm({ obj }) {
         />
       </FloatingLabel>
 
-      {/* FLAVOR NOTES INPUT  */}
-      <FloatingLabel controlId="floatingInput2" label="Flavor Notes" className="mb-3">
+      {/* FLAVOR COMMENT INPUT  */}
+      <FloatingLabel controlId="floatingInput2" label="Comment" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Enter flavor notes"
+          placeholder="Enter flavor comment"
           name="foodNotes"
           value={formInput.foodNotes}
           onChange={handleChange}
@@ -120,7 +120,7 @@ function FoodForm({ obj }) {
 FoodForm.propTypes = {
   obj: PropTypes.shape({
     name: PropTypes.string,
-    flavorNotes: PropTypes.string,
+    foodNotes: PropTypes.string,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),

@@ -37,7 +37,7 @@ export default function TeaPartyForm({ obj }) {
     if (obj.firebaseKey) {
       updateTeaParty(formInput).then(() => router.push('/teaParty'));
     } else {
-      const payload = { ...formInput, uid: user.uid };
+      const payload = { ...formInput, uid: user.uid, username: user.displayName };
       createTeaParty(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateTeaParty(patchPayload).then(() => {
@@ -125,6 +125,7 @@ TeaPartyForm.propTypes = {
     partyTime: PropTypes.string,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
+    uid: PropTypes.string,
   }),
 };
 

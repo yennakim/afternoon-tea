@@ -1,16 +1,6 @@
 import { deleteSingleTea, getFoodsPairedWithTea, getSingleTea } from './teaData';
-import { getSingleFood, deleteSingleFood } from './foodData';
+import { deleteSingleFood } from './foodData';
 import { getSingleTeaParty } from './teaPartyData';
-
-const viewFoodDetails = (foodFirebaseKey) => new Promise((resolve, reject) => {
-  getSingleFood(foodFirebaseKey)
-    .then((foodObject) => {
-      getSingleTea(foodObject.teaId)
-        .then((teaObject) => {
-          resolve({ teaObject, ...foodObject });
-        });
-    }).catch((error) => reject(error));
-});
 
 const viewTeaDetails = (teaFirebaseKey) => new Promise((resolve, reject) => {
   Promise.all([getSingleTea(teaFirebaseKey),
@@ -45,5 +35,5 @@ const deleteFoodTeaRelationship = (teaId) => new Promise((resolve, reject) => {
 });
 
 export {
-  viewFoodDetails, viewTeaDetails, deleteFoodTeaRelationship, viewTeaPartyDetails,
+  viewTeaDetails, deleteFoodTeaRelationship, viewTeaPartyDetails,
 };
