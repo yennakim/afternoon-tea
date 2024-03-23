@@ -30,9 +30,6 @@ export default function NavBar() {
             <Link passHref href="/">
               <Nav.Link>Teas</Nav.Link>
             </Link>
-            <Link passHref href="/foods">
-              <Nav.Link>Foods</Nav.Link>
-            </Link>
             <Link passHref href="/teaParty">
               <Nav.Link>Tea Parties</Nav.Link>
             </Link>
