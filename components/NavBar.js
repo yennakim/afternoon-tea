@@ -33,16 +33,18 @@ export default function NavBar() {
             <Link passHref href="/foods">
               <Nav.Link>Foods</Nav.Link>
             </Link>
+            <Link passHref href="/teaParty">
+              <Nav.Link>Tea Parties</Nav.Link>
+            </Link>
             <Link passHref href="/addTea">
               <Nav.Link>Add Tea</Nav.Link>
             </Link>
-            <Link passHref href="/teaParty">
-              <Nav.Link>Tea Parties</Nav.Link>
+            <Link href="/food/addFood" passHref>
+              <Nav.Link>Add Food</Nav.Link>
             </Link>
             <Link passHref href="/myPosts">
               <Nav.Link>My Posts</Nav.Link>
             </Link>
-            <Link href="/food/addFood" passHref>Add Food</Link>
             <Button variant="danger" onClick={signOut}>Sign Out</Button>
           </Nav>
         </Navbar.Collapse>
