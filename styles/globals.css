@@ -17,6 +17,9 @@ a {
   box-sizing: border-box;
 }
 
+.landingPage {
+  background-color: #E3E1D9;
+}
 .color, .color > a {
   background-color: #d0c3f1;
   color: #fefbed;

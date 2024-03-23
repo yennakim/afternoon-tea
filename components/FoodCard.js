@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import { Button, Card } from 'react-bootstrap';
 import Link from 'next/link';
 import { deleteSingleFood } from '../api/foodData';
@@ -7,9 +8,10 @@ import { useAuth } from '../utils/context/authContext';
 
 export default function FoodCard({ foodObj, onUpdate }) {
   const { user } = useAuth();
+  const router = useRouter();
   const deleteFood = () => {
     if (window.confirm(`Would you like to delete ${foodObj.name}?`)) {
-      deleteSingleFood(foodObj.firebaseKey).then(() => onUpdate());
+      deleteSingleFood(foodObj.firebaseKey).then(() => onUpdate(router.push('/')));
     }
   };
 
@@ -24,18 +26,16 @@ export default function FoodCard({ foodObj, onUpdate }) {
       <Card.Img variant="top" src={foodObj.image} alt={foodObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{foodObj.name}</Card.Title>
-        <Link href={`/food/${foodObj.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">VIEW</Button>
-        </Link>
+        <Card.Text>{foodObj.foodNotes}</Card.Text>
         {user.uid === foodObj.uid && (
-        <>
+        <Card.Footer>
           <Link href={`/food/edit/${foodObj.firebaseKey}`} passHref>
             <Button variant="info">EDIT</Button>
           </Link>
           <Button variant="danger" onClick={deleteFood} className="m-2">
             DELETE
           </Button>
-        </>
+        </Card.Footer>
         )}
       </Card.Body>
     </Card>
@@ -48,6 +48,7 @@ FoodCard.propTypes = {
     name: PropTypes.string,
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
+    foodNotes: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
