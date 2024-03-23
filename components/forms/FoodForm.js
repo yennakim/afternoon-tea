@@ -37,7 +37,7 @@ function FoodForm({ obj }) {
     if (obj.firebaseKey) {
       updateFood(formInput).then(() => router.push(`/tea/${obj.teaId}`));
     } else {
-      const payload = { ...formInput, uid: user.uid };
+      const payload = { ...formInput, uid: user.uid, username: user.displayName };
       createFood(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateFood(patchPayload).then(() => {
