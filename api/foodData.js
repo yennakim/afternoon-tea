@@ -69,10 +69,30 @@ const deleteSingleFood = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET USER FOODS
+const getUserFoods = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/foods.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
   getFoods,
   getSingleFood,
   createFood,
   updateFood,
   deleteSingleFood,
+  getUserFoods,
 };
